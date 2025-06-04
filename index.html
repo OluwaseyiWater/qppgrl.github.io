@@ -190,6 +190,10 @@
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">QPPG</span> leverages quantum Fisher information to preconditon
          gradient updates achieving faster convergence compared to classical reinforcement learning.
+         <p>
+          The animated videos do not correctly represent the work, wee found them cool and decided to include them.
+           They were all generated using Sora &#x1F60E;
+         </p>
       </h2>
     </div>
   </div>
@@ -202,23 +206,23 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src=""
+            <source src="./static/videos/video2.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src=""
+            <source src="./static/videos/video3.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src=""
+            <source src="./static/videos/video4.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-fullbody">
+        <!-- <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
             <source src=""
                     type="video/mp4">
@@ -247,7 +251,7 @@
             <source src=""
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -319,8 +323,8 @@
             Our <i>QPPG</i> algorithm can be adopted for link adaptation in a noisy fading wireless channel.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src=""
-                    type="video/mp4">
+            <source src="./static/images/qppgwireless.png"
+                    type="image">
           </video>
         </div>
       </div>
@@ -337,8 +341,8 @@
               maximize successful throughput.
             </p>
             <video id="matting-video" controls playsinline height="100%">
-              <source src=""
-                      type="video/mp4">
+              <source src="./static/images/qppgwireless.png"
+                      type="image">
             </video>
           </div>
 
@@ -362,7 +366,7 @@
         </div>
         <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
-            <img src=""
+            <img src="./static/images/quantum_training_progress (1).png"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
             <p>Start Frame</p>
@@ -376,7 +380,7 @@
                    step="1" min="0" max="100" value="0" type="range">
           </div>
           <div class="column is-3 has-text-centered">
-            <img src=""
+            <img src="./static/images/rl_full_comparison.png"
                  class="interpolation-image"
                  alt="Interpolation end reference image."/>
             <p class="is-bold">End Frame</p>
@@ -418,21 +422,21 @@
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            There's a lot of excellent work that was very useful for the completion of this work.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+            <a href="https://doi.org/10.22331/q-2020-05-25-269">Quantum Natural Gradient</a> leveraged QFI to accelerate convergence in noiseless bandit settings.
           </p>
           <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
+            <a href="https://doi.org/10.1007/BF00992696">Simple Statistical Gradient-following Algorithms for Connectionist Reinforcement Learning</a>
+            estimated the gradient of expected return via Monte Carlo sampling.
           </p>
-          <p>
+          <!-- <p>
             Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
           </p>
           <p>
             There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
