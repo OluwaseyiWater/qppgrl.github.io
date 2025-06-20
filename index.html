@@ -6,11 +6,12 @@
         content="A quantum reinforcement learning algorithm that is adaptable in a Rayleigh-fading channel for noise control and to maximize throughput.">
   <meta name="keywords" content="QPPG, RL, Wireless Networks">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quantum-Preconditioned Policy Gradients (QPPG) for Robust Reinforcement Learning in Noisy Single-Qubit Control</title>
+  <title>Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="./static/js/slideshow.js"></script>
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
@@ -35,13 +36,17 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
@@ -91,7 +96,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Quantum-Preconditioned Policy Gradients for Robust Reinforcement Learning in Noisy Single-Qubit Control</h1>
+          <h1 class="title is-1 publication-title">Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://oluwaseyiwater.github.io">Oluwaseyi Giwa</a><sup>1</sup>,</span>
@@ -191,8 +196,8 @@
         <span class="dnerf">QPPG</span> leverages quantum Fisher information to preconditon
          gradient updates achieving faster convergence compared to classical reinforcement learning.
          <p>
-          The animated videos do not correctly represent the work, wee found them cool and decided to include them.
-           They were all generated using Sora &#x1F60E;
+          The animated video does not accurately represent the work, we found them cool and decided to include them.
+           It was generated using Sora &#x1F60E;
          </p>
       </h2>
     </div>
@@ -200,7 +205,7 @@
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -221,7 +226,7 @@
             <source src="./static/videos/video4.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!-- <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
             <source src=""
@@ -252,10 +257,10 @@
                     type="video/mp4">
           </video>
         </div> -->
-      </div>
+      <!-- </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -343,7 +348,7 @@
               and pilot signal-to-noise ratio(SNR). The agent selects modulation and transmit power to 
               maximize successful throughput.
             </p>
-            <img src="./static/images/qppgwireless.png" 
+            <img src="./static/images/rayleigh-fading.png" 
           alt="">
             <!-- <video id="matting-video" controls playsinline height="100%">
               <source src="./static/images/qppgwireless.png"
@@ -356,12 +361,56 @@
     </div>
     <!--/ Matting. -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Algorithms</h2>
 
-        <!-- Interpolating. -->
+    <!-- Results -->
+
+    <div class="slideshow-container">
+      <h2 class="title is-3">Connection to Wireless Networks</h2>
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="./static/images/classical_training_progress (1).png">
+        <div class="text">Illustrative Example: Classical REINFORCE Training.  
+  This figure shows the learning curve (episode reward and moving average) for the classical REINFORCE 
+  agent alone.</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="./static/images/quantum_training_progress (1).png">
+        <div class="text">Illustrative Example: QPPG Training.  
+  This figure shows the learning curve (episode reward and moving average) for the QPPG agent alone.</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="./static/images/rl_full_comparison.png">
+        <div class="text">Cross‐method learning‐curve comparison. Mean \(\pm 1 \sigma\) episode reward over
+           500 training episodes (five‐seed average) for CPG (blue), QNPG (black), QPPG (red), and Q-DQN (magenta).
+            Shaded bands show \(\pm 1 \sigma\). QPPG converges fastest (\(\approx\)100 episodes to 90 \% of max),
+             QNPG next (\(\approx\)120 episodes), followed by Q-DQN (\(\approx\)278 episodes) and CPG (\(\approx\)420 
+             episodes). Under high noise (15 \%), QPPG also achieves the highest final success (90\%), 
+          demonstrating both sample efficiency and robustness in noisy quantum control.</div>
+      </div>
+
+    </div>
+    <br>
+
+    <div style="text-align: center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    
+
+
+
+    <!-- Animation. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2> -->
+
+        <!-- Interpolating.
         <h3 class="title is-4">Different Algorithms</h3>
         <div class="content has-text-justified">
           <p>
@@ -391,7 +440,7 @@
             <p class="is-bold">End Frame</p>
           </div>
         </div>
-        <br/>
+        <br/> -->
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
@@ -415,8 +464,8 @@
         </div> -->
         <!--/ Re-rendering. -->
 
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
     <!--/ Animation. -->
 
 
@@ -456,8 +505,8 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{oluwaseyi2025,
   author    = {Oluwaseyi, Giwa and Muhammad, Ahmed Mohsin and Muhammad, Ali Jamshed},
-  title     = {Quantum-Preconditioned Policy Gradients for Robust Reinforcement Learning in Noisy Single-Qubit Control},
-  journal   = {IEEE Wireless Communications Letters},
+  title     = {Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation},
+  journal   = {IEEE Communications Letters},
   year      = {2025},
 }</code></pre>
   </div>
