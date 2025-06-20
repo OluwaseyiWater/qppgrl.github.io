@@ -115,11 +115,10 @@ body {
   font-display: block;
   position: relative;
   margin: auto;
-  vertical-align: middle;
 }
 
 .text {
-  color: #f2f2f2;
+  color: #000;
   font-size: 15px;
   font-family: 'Academicons';
   font-style: normal;
@@ -133,7 +132,7 @@ body {
 }
 
 .numbertext {
-  color: #f2f2f2;
+  color: #000;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
