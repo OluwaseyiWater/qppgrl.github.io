@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="A quantum reinforcement learning algorithm that is adaptable in a Rayleigh-fading channel for noise control and to maximize throughput.">
-  <meta name="keywords" content="QPPG, RL, Wireless Networks">
+        content="Quantum reinforcement learning fro link adaptation in Rayleigh fading channels.">
+  <meta name="keywords" content="QRL, Link Adaptation, Rayleigh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation</title>
+  <title>QPPG: Quantum-Preconditioned Policy Gradient for Link Adaptation in Rayleigh Fading Channels</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -71,7 +71,7 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://wirelessoptim.github.io">
+          <a class="navbar-item" href="https://oluwaseyiwater.github.io/wireless-optim/">
             WirelessOptim
           </a>
           <a class="navbar-item" href="https://oluwaseyiwater.github.io/qppgrl.github.io/">
@@ -79,9 +79,6 @@
           </a>
           <a class="navbar-item" href="https://oluwaseyiwater.github.io/meta-rl/">
             MetaRL
-          </a>
-          <a class="navbar-item" href="https://causalwireless.github.io">
-            CausalWireless
           </a>
         </div>
       </div>
@@ -96,21 +93,25 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation</h1>
+          <h1 class="title is-1 publication-title">QPPG: Quantum-Preconditioned Policy Gradient for Link Adaptation 
+            in Rayleigh Fading Channels</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://oluwaseyiwater.github.io">Oluwaseyi Giwa</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://ahmd-mohsin.github.io">Muhammad Ahmed Mohsin</a><sup>2</sup>,</span>
+              <a href="https://ahmd-mohsin.github.io/">Muhammad Ahmed Mohsin</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=at4MvYMAAAAJ&hl=en">Muhammad Ali Jamshed</a><sup>3</sup>,
-            </span>
+              <a href="#">Folarin Jubril Adesola</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=at4MvYMAAAAJ&hl=en">Muhammad Ali Jamshed</a><sup>4</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>African Institute for Mathematical Sciences,</span>
-            <span class="author-block"><sup>2</sup>Stanford University</span>
-            <span class="author-block"><sup>3</sup>University of Glasgow</span>
+            <span class="author-block"><sup>2</sup>Stanford University,</span>
+            <span class="author-block"><sup>3</sup>Olabisi Onabanjo University,</span>
+            <span class="author-block"><sup>4</sup>University of Glasgow</span>      
+
           </div>
 
           <div class="column has-text-centered">
@@ -122,11 +123,11 @@
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>PDF</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="http://arxiv.org/abs/2506.15753"
+                <a href="https://arxiv.org/abs/2506.15753"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -134,9 +135,10 @@
                   <span>arXiv</span>
                 </a>
               </span>
+              
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/OluwaseyiWater/quantumRL"
+                <a href="https://github.com/OluwaseyiWater/qppg-refactor"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -144,16 +146,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-                  </span> -->
             </div>
 
           </div>
@@ -164,20 +156,13 @@
 </section>
 
 <section class="hero teaser">
+
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/video5.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">QPPG</span> leverages quantum Fisher information to preconditon
-         gradient updates achieving faster convergence compared to classical reinforcement learning.
-         <p>
-          The animated video does not accurately represent the work; we found it cool and decided to include it.
-           It was generated using Sora &#x1F60E;
-         </p>
-      </h2>
+        <img src="./static/images/qppg_framework.jpg">
+        <h2 class="subtitle has-text-centered">
+          QPPG leverages Fisher information matrix to preconditon gradient updates 
+          achieving faster convergence compared to natural policy gradient (NPG).
     </div>
   </div>
 </section>
@@ -192,35 +177,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Reinforcement learning (RL) in quantum 
-            control faces unique challenges due to measurement-induced stochasticity and environmental noise.
-          </p>
-          <p>
-          Classical policy-gradient methods often converge slowly under 
-          high variance, while value-based quantum variants may require extensive experience replay. 
-          We introduce Quantum–Preconditioned Policy Gradients (<span class="dnerf">QPPG</span>), 
-          a natural‐gradient–inspired 
-          algorithm that whitens policy updates using the full inverse quantum Fisher information (QFI) with
-          Tikhonov regularization.  QPPG bridges classical and quantum geometry by reducing to an ideal quantum
-          natural gradients as the regularizer vanishes yet remains stable under noisy QFI estimates. 
-          We benchmark QPPG against Classical REINFORCE (CPG), a block-diagonal quantum natural policy 
-          gradient (QNPG), and a Quantum Deep Q-Network (Q-DQN) in both a two-state classical environment
-          and a custom single-qubit Gym task with depolarizing, amplitude-damping, and dephasing noise.
-      
-          </p>
-          <p>
-            Across five random seeds, QPPG achieves 90% of its maximum return in only (\(100 \pm 12\))
-            episodes—over four times faster than CPG (\(420 \pm 5\)) and nearly three times faster 
-            than Q‐DQN (\(278 \pm 35\)).  Under elevated noise (15%), QPPG attains a 90% success rate,
-            surpassing CPG (80%), QNPG (85%), and Q‐DQN (78%).  These results demonstrate that full 
-            inverse‐QFI preconditioning delivers both rapid, stable learning and strong noise resilience,
-            paving the way for scalable quantum RL in larger Hilbert spaces.
+            Reliable link adaptation is critical for efficient wireless communications
+             in dynamic fading environments. However, reinforcement learning (RL) solutions
+              often suffer from unstable convergence due to poorly conditioned policy gradients,
+               hindering their practical application. We propose the quantum-preconditioned
+                policy gradient (QPPG) algorithm, which leverages Fisher-information-based 
+                preconditioning to stabilise and accelerate policy updates. Evaluations in 
+                Rayleigh fading scenarios show that QPPG achieves faster convergence, a 28.6% 
+                increase in average throughput, and a 43.8% decrease in average transmit power 
+                compared to classical methods. This work introduces quantum-geometric 
+                conditioning to link adaptation, marking a significant advance in developing 
+                robust, quantum-inspired reinforcement learning for future 6G networks,
+                 thereby enhancing communication reliability and energy efficiency.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
   </div>
 </section>
 
@@ -228,43 +200,7 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Connection to Wireless Networks</h2>
-          <p>
-            Our <i>QPPG</i> algorithm can be adopted for link adaptation in a noisy fading wireless channel.
-          </p>
-
-          <img src="./static/images/qppgwireless.png" 
-          alt="">
-         
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Rayleigh Fading Channel</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              We simulate a single-user Rayleigh-fading channel with 4 receiving antennas
-              and pilot signal-to-noise ratio(SNR). The agent selects modulation and transmit power to 
-              maximize successful throughput.
-            </p>
-            <img src="./static/images/rayleigh-fading.png" 
-          alt="">
-            
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
+  
 
     <!-- Results -->
 
@@ -272,21 +208,51 @@
       <h2 class="title is-3">Results</h2>
 
       <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="./static/images/classical_training_progress (1).png">
-        <div class="text">Result from our experiments.</div>
+        <div class="numbertext">1 / 8</div>
+        <img src="./static/images/throughput.jpg">
+        <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="./static/images/quantum_training_progress (1).png">
-        <div class="text">Result from our experiments.</div>
+        <div class="numbertext">2 / 8</div>
+        <img src="./static/images/packet-error-rate.jpg">
+        <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="./static/images/rl_full_comparison.png">
-        <div class="text">Result from our experiments.</div>
+        <div class="numbertext">3 / 8</div>
+        <img src="./static/images/tx-power.jpg">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 8</div>
+        <img src="./static/images/s1_baseline.jpg">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 8</div>
+        <img src="./static/images/s2_high_dim.jpg">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 8</div>
+        <img src="./static/images/s3_low_csi.jpg">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 8</div>
+        <img src="./static/images/s4_noise_uncert.jpg">
+        <div class="text"></div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 8</div>
+        <img src="./static/images/s5_combined.jpg">
+        <div class="text"></div>
       </div>
 
     </div>
@@ -296,7 +262,16 @@
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
+    
+
+
+
     
 
     <!-- Concurrent Work. -->
@@ -306,21 +281,12 @@
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was very useful for the completion of this work.
+            There are lot of excellent work that were very useful for the completion of this work. You
+            can find them in our paper.
           </p>
-          <p>
-            <a href="https://doi.org/10.22331/q-2020-05-25-269">Quantum Natural Gradient</a> leveraged QFI to accelerate convergence in noiseless bandit settings.
-          </p>
-          <p>
-            <a href="https://doi.org/10.1007/BF00992696">Simple Statistical Gradient-following Algorithms for Connectionist Reinforcement Learning</a>
-            estimated the gradient of expected return via Monte Carlo sampling.
-          </p>
-          
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
@@ -328,11 +294,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{oluwaseyi2025,
-  author    = {Oluwaseyi, Giwa and Muhammad, Ahmed Mohsin and Muhammad, Ali Jamshed},
-  title     = {Quantum Fisher-Preconditioned Reinforcement Learning: From Single-Qubit Control to Rayleigh-Fading Link Adaptation},
-  journal   = {IEEE Communications Letters},
-  year      = {2025},
+    <pre><code>@article{qppg2025,
+  author    = {Oluwaseyi, Giwa and Muhammad, Ahmed Mohsin and Folarin, Jubril Adesola and Muhammad, Ali Jamshed},
+  title     = {QPPG: Quantum-Preconditioned Policy Gradient for Link Adaptation in Rayleigh Fading Channels},
+  journal   = {IEEE Wireless Communications Letters},
+  year      = {2025}
 }</code></pre>
   </div>
 </section>
