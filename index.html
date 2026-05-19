@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Quantum reinforcement learning fro link adaptation in Rayleigh fading channels.">
-  <meta name="keywords" content="QRL, Link Adaptation, Rayleigh">
+        content="Quantum-Preconditioned Policy Gradient for link adaptation in Rayleigh fading channels.">
+  <meta name="keywords" content="QPPG, Link Adaptation, Rayleigh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QPPG: Quantum-Preconditioned Policy Gradient for Link Adaptation in Rayleigh Fading Channels</title>
 
@@ -118,7 +118,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="#"
+                <a href="https://doi.org/10.1109/LWC.2026.3694465"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -159,10 +159,11 @@
 
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <img src="./static/images/qppg_framework.jpg">
+        <img src="./static/images/qppg-framework.jpg">
         <h2 class="subtitle has-text-centered">
-          QPPG leverages Fisher information matrix to preconditon gradient updates 
-          achieving faster convergence compared to natural policy gradient (NPG).
+          The QPPG Framework. The <em>Quantum-Geometric Preconditioner</em> transforms $g$ into the
+           natural gradient $x$ by 
+          solving a regularized linear system using CG Solver and FVP.
     </div>
   </div>
 </section>
@@ -177,18 +178,76 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Reliable link adaptation is critical for efficient wireless communications
-             in dynamic fading environments. However, reinforcement learning (RL) solutions
-              often suffer from unstable convergence due to poorly conditioned policy gradients,
-               hindering their practical application. We propose the quantum-preconditioned
-                policy gradient (QPPG) algorithm, which leverages Fisher-information-based 
-                preconditioning to stabilise and accelerate policy updates. Evaluations in 
-                Rayleigh fading scenarios show that QPPG achieves faster convergence, a 28.6% 
-                increase in average throughput, and a 43.8% decrease in average transmit power 
-                compared to classical methods. This work introduces quantum-geometric 
-                conditioning to link adaptation, marking a significant advance in developing 
-                robust, quantum-inspired reinforcement learning for future 6G networks,
-                 thereby enhancing communication reliability and energy efficiency.
+            Reliable link adaptation is critical for 6G wireless communications in dynamic fading 
+            environments. However, classical reinforcement learning (RL) often suffers from unstable 
+            convergence due to the Euclidean geometry of the standard gradient updates, which ignores
+             the curvature of the policy parameter space. We propose the quantum-preconditioned policy 
+             gradient (QPPG), a geometric optimization framework that approximates the quantum natural 
+             gradient (QNG) for classical link adaptation. We stress that the prefix <em>quantum</em> 
+             refers solely to the Fubini-Study metric and quantum-tomography-inspired regularization 
+             from which the preconditioner is derived, not to quantum hardware or exponential speedups.
+              Evaluations across five network scenarios demonstrate that QPPG bridges the gap between 
+              quantum geometry and classical engineering. It achieves a 28.6% gain in throughput and a 43.8%
+               decrease in transmit power compared to classical baselines, while exhibiting superior 
+            robustness to channel estimation errors and noise uncertainty.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- State-of-the-Art -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Distinctions from State-of-the-Art</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b><h3>QPPG vs. TRPO and Damped NPG</h3></b>
+            <br>
+            Algorithmically, QPPG operates as a Tikhonov-regularized (damped) natural policy gradient 
+            utilizing FVP and CG. We state directly that QPPG is fundamentally a quantum-motivated version
+             of damped NPG rather than a new algorithmic update rule. However, unlike TRPO's hard KL 
+             constraints, which can cause step-size stagnation during SNR spikes, QPPG's damping $\xi$ 
+             is motivated by quantum-state tomography. This provides an information-geometric rationale
+              for regularizing against noisy observations, moving beyond
+             heuristic damping selection to stabilize learning in fading environments.
+
+            <br> <br> <br>
+            <b><h3>QPPG vs. QAC</h3></b>
+            <br>
+            QAC uses Parameterized Quantum Circuits (model-level innovation) but often updates via 
+            Euclidean gradients, risking barren plateaus. <b>QPPG</b> maintains a classical network but 
+            modifies the optimization landscape via preconditioning to counteract high-variance fading.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Scalability. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Complexity and Scalability</h2>
+        <div class="content has-text-justified">
+          <p>
+            The computational cost of QPPG is dominated by the CG solver. While standard policy 
+            gradients scale linearly with the number of parameters \(d\) (i.e., \(\mathcal{O}(d)\)),
+             QPPG requires \(K_{\rm{CG}}\) forward-backward passes for FVP, yielding a per-step 
+             complexity of \(\mathcal{O}(K_{\rm{CG}} \cdot d)\). 
+             In well-conditioned scenarios (e.g., s1, s2), where the FIM is full-rank, 
+             and QAC achieves 
+            comparable final reward, the additional \(K_{\rm{CG}} \cdot d\) overhead is less justifiable. 
+            However, in near-singular landscapes (s4, s5), QPPG reaches $90%$ of its maximum reward in 
+            approximately $400$ episodes, compared to $> 800$ episodes for classical baselines. This roughly
+            $2\times$ improvement in sample efficiency directly offsets the higher per-iteration cost, rendering 
+            the overhead practically worthwhile in high-uncertainty environments.
           </p>
         </div>
       </div>
@@ -227,31 +286,31 @@
 
       <div class="mySlides fade">
         <div class="numbertext">4 / 8</div>
-        <img src="./static/images/s1_baseline.jpg">
+        <img src="./static/images/s1_baseline.png">
         <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">5 / 8</div>
-        <img src="./static/images/s2_high_dim.jpg">
+        <img src="./static/images/s2 high dim.png">
         <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">6 / 8</div>
-        <img src="./static/images/s3_low_csi.jpg">
+        <img src="./static/images/s3_low_csi.png">
         <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">7 / 8</div>
-        <img src="./static/images/s4_noise_uncert.jpg">
+        <img src="./static/images/s4_noise_uncert.png">
         <div class="text"></div>
       </div>
 
       <div class="mySlides fade">
         <div class="numbertext">8 / 8</div>
-        <img src="./static/images/s5_combined.jpg">
+        <img src="./static/images/s5_combined.png">
         <div class="text"></div>
       </div>
 
@@ -294,11 +353,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{qppg2025,
+    <pre><code>@article{qppg2026,
   author    = {Oluwaseyi, Giwa and Muhammad, Ahmed Mohsin and Folarin, Jubril Adesola and Muhammad, Ali Jamshed},
   title     = {QPPG: Quantum-Preconditioned Policy Gradient for Link Adaptation in Rayleigh Fading Channels},
   journal   = {IEEE Wireless Communications Letters},
-  year      = {2025}
+  year      = {2026}
 }</code></pre>
   </div>
 </section>
